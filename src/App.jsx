@@ -4,6 +4,8 @@ import Navbar from './Navbar'
 import Data from './Data'
 import Background from './Background'
 import Style from './Style'
+import Logo from './Logo'
+import Generated from './Generated'
 
 
 
@@ -15,15 +17,18 @@ function GenerateButton() {
       </form>
   )
 }
+
 function App() {
   
 return (        
     <div className="App">
       <Navbar />
       <Data />
+      <Logo />
       <Background />
       <Style />
       <GenerateButton />
+      <Generated />
       </div>
   )
 }
