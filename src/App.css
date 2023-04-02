@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Karla", sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
+  font-family: "Karla", sans-serif;
+  color: white;
+}
+
+.header img {
+  height: 60px;
+  margin-left: 10px;
+}
+
+.header h1 {
+  margin-right: auto;
+  padding-left: 10px;
+}
+
+.header h2 {
+  padding-right: 20px;
+}
+
+.form {
+  display:grid;
+  grid-template-columns: auto auto;
+
+  gap: 20px;
+  margin: 50px;
+}
+
+.generator {
+  padding: 50px 100px 50px 100px;
+}
+
+.form--input {
+  text-indent: 10px;
+  height: 40px;
+
+}
+.form--button {
+  font-family: "Karla", sans-serif;
+  grid-column: 1/-1;
+  border-radius: 3px;
+  border-width: 2px;
+  background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.backgrounds {
+  width: 300px;
+  height: 200px;
+  margin: 20px;
+}
+
+.background-list {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 20px;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
+}
+
+.background--choice {
+  display: flex;
+  flex-direction:column;
+  align-items:center;
+  
+}
+
+.background--button {
+  font-family: "Karla", sans-serif;
+  grid-column: 1/-1;
+  border-radius: 2px;
+  border-width: 2px;
+  background: white;
+  border-color: black;
+  cursor: pointer;
+  height: 40px;
+  width: 90%;
+}
+
+.number {
+  color: white;
+  font-family: "Karla", sans-serif;
+  background-color: rgba(255, 166, 0, 0.459);
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  margin-right: 10px;
+  font-weight: bold;
+}
