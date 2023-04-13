@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import Fonts from './fonts';
 
-function Style() {
+function Style(props) {
+  const { onFontChange } = props;
   const [selectedFont, setSelectedFont] = useState('');
 
   const handleChange = (event) => {
+    const selectedFont = Fonts.Fonts.find((font) => font.family === event.target.value);
     setSelectedFont(event.target.value);
+    onFontChange(selectedFont);
   };
 
   const FontStyles = Fonts.Fonts.map((font) => (

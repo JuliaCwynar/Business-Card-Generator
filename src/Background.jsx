@@ -1,22 +1,22 @@
-import React, {useState} from 'react'
-import data from './Backgrounds'
-import insertedData from './insertedData.js'
+import React, { useState } from 'react';
+import data from './Backgrounds';
 
+function Background(props) {
+  const { onBackgroundChange } = props;
+  const [selectedBackground, setSelectedBackground] = useState('');
 
-function Background() {
+  const handleChange = (event) => {
+    setSelectedBackground(event.target.value);
+    const selectedBackgroundUrl = data.data.backgrounds.find(
+      (background) => background.id === event.target.value
+    ).url;
+    onBackgroundChange(selectedBackgroundUrl);
+  };
 
-    const [selectedBackground, setSelectedBackground] = useState('');
-
-    const handleChange = (event) => {
-        setSelectedBackground(event.target.value);
-        insertedData.insertedData.background = data.data.backgrounds.find((background) => background.id === event.target.value).url;
-    };
-
-    const backgrounds = data.data.backgrounds.map((background) => (
-        <div className='background--choice'>
-        <img
-        key={background.id}
-        className='backgrounds'
+  const backgrounds = data.data.backgrounds.map((background) => (
+    <div className="background--choice" key={background.id}>
+      <img
+        className="backgrounds"
         src={background.url}
         alt={`Background ${background.id}`}
       />
@@ -29,19 +29,17 @@ function Background() {
         onChange={handleChange}
       />
       <label htmlFor={`background-${background.id}`}>Tło nr {background.id}</label>
-      </div>
-    )
-    )
+    </div>
+  ));
 
-    return (
-        <div className='generator'>
-            <h1><span className='number'>2</span>Choose background</h1>
-                <section className='background-list'>
-                    {backgrounds}
-                </section>
-      </div>
-    )
+  return (
+    <div className="generator">
+      <h1>
+        <span className="number">2</span>Choose background
+      </h1>
+      <section className="background-list">{backgrounds}</section>
+    </div>
+  );
 }
 
-
-export default Background
+export default Background;

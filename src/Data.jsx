@@ -1,64 +1,79 @@
-import React, {useState} from 'react'
+import React from 'react';
 
-function Data() {
-
-    const [companyName, setCompanyName] = useState('');
-    const [companyField, setCompanyField] = useState('');
-    const [companyAddress, setCompanyAddress] = useState('');
-    const [nameSurname, setNameSurname] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
-    const [email, setEmail] = useState('');
+function Data(props) {
+  
 
 
-    return(
-        <div className='generator'>
-            <h1><span className='number'>1</span>Insert data</h1>
-            <form className="form">
+
+  return (
+    <div className="generator">
+      <h1>
+        <span className="number">1</span>Insert data
+      </h1>
+      <div className='input--data'>
+        <div className='form--data'>
+
         <input
           type="text"
           className="form--input"
           placeholder="Company name"
-          value={companyName}
-          onChange={(event) => setCompanyName(event.target.value)}
+          value={props.companyName}
+          onChange={(event) => props.setCompanyName(event.target.value)}
         />
+        </div>
+
+        <div className='form--data'>
         <input
           type="text"
           className="form--input"
           placeholder="Company field"
-          value={companyField}
-          onChange={(event) => setCompanyField(event.target.value)}
+          value={props.companyField}
+          onChange={(event) => props.setCompanyField(event.target.value)}
         />
+        </div>
+
+        <div className='form--data'>
         <input
           type="text"
           className="form--input"
           placeholder="Company address"
-          value={companyAddress}
-          onChange={(event) => setCompanyAddress(event.target.value)}
+          value={props.companyAddress}
+          onChange={(event) => props.setCompanyAddress(event.target.value)}
         />
+        </div>
+
+        <div className='form--data'>
         <input
           type="text"
           className="form--input"
           placeholder="Name and surname"
-          value={nameSurname}
-          onChange={(event) => setNameSurname(event.target.value)}
+          value={props.nameSurname}
+          onChange={(event) => props.setNameSurname(event.target.value)}
         />
+        </div>
+
+        <div className='form--data'>
         <input
           type="text"
           className="form--input"
           placeholder="Phone number"
-          value={phoneNumber}
-          onChange={(event) => setPhoneNumber(event.target.value)}
+          value={props.phoneNumber}
+          onChange={(event) => props.setPhoneNumber(event.target.value)}
         />
+        </div>
+
+        <div className='form--data'>
         <input
           type="text"
           className="form--input"
           placeholder="Email"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
+          value={props.email}
+          onChange={(event) => props.setEmail(event.target.value)}
         />
-      </form>
+        </div>
+    </div>
     </div>
   );
 }
 
-export default Data
+export default Data;

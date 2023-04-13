@@ -1,25 +1,31 @@
-import React from 'react'
-import insertedData from './insertedData'
+import React from 'react';
 
+function Generated(props) {
+  const { companyName, companyField, companyAddress, nameSurname, phoneNumber, email, logo, background, font } = props;
 
-function Generated() {
+  return (
+    <div className='generated--space'>
+      <div className='card--front' style={{ backgroundImage: `url(${background})`, fontFamily: font ? font.family : 'sans-serif' }}>
+        <h2>{companyName}</h2>
+        <img src={logo} alt="logo" />
+      </div>
 
-    const { name, field, address, namesurname, phonenumber, email, logo, background, font } = insertedData.insertedData;
-
-    return (
-    <div className='genertated--space'>
-            <div className='generated--card' style={{ backgroundImage: `url(${background})`, fontFamily: font }}>
-                <h2>{name}</h2>
-                <p>{field}</p>
-                <p>{address}</p>
-                <p>{namesurname}</p>
-                <p>{phonenumber}</p>
-                <p>{email}</p>
-                <img src={logo} alt="logo" />
-            </div>
+      <div className='card--back' style={{ backgroundImage: `url(${background})`, fontFamily: font ? font.family : 'sans-serif' }}>
+        <div className='card--inf'>
+          <div className="left">
+            <p>{nameSurname}</p>
+            <p>{companyField}</p>
+          </div>
+          <div className='right'>
+            <p>{}</p>
+            <p>{phoneNumber}</p>
+            <p>{email}</p>
+          </div>
+        </div>
+        <p className='address'>{companyAddress}</p>
+      </div>
     </div>
   )
 }
 
-export default Generated
-
+export default Generated;

@@ -1,12 +1,24 @@
 import React, { useState } from "react";
 
-function Logo() {
+function Logo(props) {
 
+  const { setLogoImage } = props;
   const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleImageChange = (event) => {
+    const image = event.target.files[0];
+    setLogoImage(image);
+    setSelectedImage(image);
+  };
+
+  const handleRemoveClick = () => {
+    setLogoImage(null);
+    setSelectedImage(null);
+  };
 
   return (
     <div className='generator'>
-        <h1><span className='number'>2</span>Insert logo</h1>
+      <h1><span className='number'>2</span>Insert logo</h1>
 
       {selectedImage && (
         <div>
@@ -16,7 +28,7 @@ function Logo() {
             src={URL.createObjectURL(selectedImage)}
           />
           <br />
-          <button onClick={() => setSelectedImage(null)}>Remove</button>
+          <button onClick={handleRemoveClick}>Remove</button>
         </div>
       )}
 
@@ -26,10 +38,7 @@ function Logo() {
       <input
         type="file"
         name="myImage"
-        onChange={(event) => {
-          console.log(event.target.files[0]);
-          setSelectedImage(event.target.files[0]);
-        }}
+        onChange={handleImageChange}
       />
     </div>
   );
