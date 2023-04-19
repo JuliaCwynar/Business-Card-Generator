@@ -54,7 +54,7 @@ body {
 }
 
 
-.background--choice, .font {
+.background--choice {
   padding: 0px 0px;
   line-height: 30px;
   border: 1px solid #dddbda;
@@ -63,11 +63,21 @@ body {
 
 }
 
-.background--choice:last-child {
-  width: 32%;
-  height: 260px;
-  justify-content: center;
+.font label {
+  display: inline-block;
+  padding: 0px 5px;
+  width: 300px;
+  line-height: 30px;
+  border: 1px solid #dddbda;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 4px white solid;
+  box-shadow:
+  0 0 0 1px rgba(128, 128, 128, 0.26);
+  cursor: pointer;
 }
+
+
 
 
 .generator {
@@ -105,23 +115,44 @@ body {
   border: none;
 }
 
-label {
-  margin-bottom: 10px;
-  cursor: pointer;
-  padding: 1px 15px;
-}
-
-input[type="radio"]:checked + label {
-  color: rgb(0, 110, 255);
-
-}
-
-.backgrounds {
+.background--choice label, .background--choice:last-child {
+  padding: 0px 0px;
+  line-height: 30px;
+  border: 1px solid #dddbda;
+  border-radius: 4px;
+  background-color: #fff;
   width: 300px;
   height: 180px;
   margin: 20px;
   border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  flex-direction:column;
+  align-items:center;
+  background-size: cover;
 }
+
+.background--choice:last-child {
+  width: 340px;
+  margin: 0px;
+  height: 220px;
+}
+
+.background--choice input[type="color"]:checked {
+  border: rgb(70, 142, 235) 4px solid;
+}
+
+input[type=checkbox] {
+  display:none;
+}
+
+.font input[type="checkbox"]:checked + label {
+  border: rgb(70, 142, 235) 3px solid;
+
+}
+
+
+
 
 .background-list {
   display: flex;
@@ -244,6 +275,7 @@ margin: 100px;
 .upload--area {
   background-color: white;
   display: grid;
+  grid-template-columns: auto;
   gap: 50px;
   justify-content: center;
   padding: 50px;
@@ -254,6 +286,12 @@ margin: 100px;
   border-radius: 4px;
   color: rgb(8, 7, 7);
   text-align: center;
+}
+
+.upload--area label {
+  position: relative;
+  left: -30px;
+
 }
 
 
@@ -274,37 +312,39 @@ input[type="file"]::-webkit-file-upload-button {
   visibility: hidden;
 }
 
+input[type="file"]::before {
+  content: 'Choose an image';
+  display: inline-block;
+  background: linear-gradient(90.41deg, #8436F9 1.14%, #A397FB 100%);
+  color: #fff; 
+  padding: 15px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+  width: 200px;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid rgba(128, 128, 128, 0.322);
+}
 
 
 input[type="color"] {
 	-webkit-appearance: none;
   margin-top: 15px;
 	border: none;
-	width: 90%;
-	height: 320px;
   background-color: transparent;
+  width: 90%;
+  height: 80%;
+
 }
-input[type="color"]::-webkit-color-swatch-wrapper {
-	padding: 0;
-}
+
 input[type="color"]::-webkit-color-swatch {
 	border-radius: 5px;
   border: none;
   cursor: pointer;
 }
 
-input[type="file"]::before {
-  content: 'Choose an image';
-  display: inline-block;
-  background: linear-gradient(90.41deg, #8436F9 1.14%, #A397FB 100%);
-  color: #fff; 
-  padding: 5px 10px;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 4px;
-}
+.background--choice input[type="checkbox"]:checked + label {
+  border: rgb(70, 142, 235) 4px solid;
 
-input[type="radio"] {
-  display: none;
 }
-

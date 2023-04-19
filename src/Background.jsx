@@ -26,14 +26,11 @@ function Background(props) {
 
 
   const backgrounds = data.data.backgrounds.map((background) => (
-    <div className="background--choice" key={background.id}>
-    <img
-      className="backgrounds"
-      src={background.url}
-      alt={`Background ${background.id}`}
-    />
+    <div className="background--choice" key={background.id}
+     >
     <input
-      type="radio"
+      
+      type="checkbox"
       id={`background-${background.id}`}
       className="background--button"
       name="background"
@@ -41,7 +38,7 @@ function Background(props) {
       checked={selectedBackground === background.id}
       onChange={handleChange}
     />
-    <label htmlFor={`background-${background.id}`}>Background no. {background.id}</label>
+    <label style={{backgroundImage: `url(${background.url})`}} htmlFor={`background-${background.id}`}/>
   </div>
   ));
 

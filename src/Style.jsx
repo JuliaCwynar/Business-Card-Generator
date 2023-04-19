@@ -14,7 +14,7 @@ function Style(props) {
   const FontStyles = Fonts.Fonts.map((font) => (
     <div className='font' key={font.id}>
       <input
-        type="radio"
+        type="checkbox"
         id={font.family}
         name="fontStyle"
         value={font.family}
