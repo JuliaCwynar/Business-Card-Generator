@@ -6,42 +6,26 @@ function Logo(props) {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const handleImageChange = (event) => {
-    const image = event.target.files[0];
-    setLogoImage(image);
-    setSelectedImage(image);
-  };
-
-  const handleRemoveClick = () => {
-    setLogoImage(null);
-    setSelectedImage(null);
+    setSelectedImage(event.target.files[0]);
+    setLogoImage(event.target.files[0]);
   };
 
   return (
     <div className='generator'>
       <h1><span className='number'>2</span>Insert logo</h1>
-
-      {selectedImage && (
-        <div>
-          <img
-            alt="not found"
-            width={"250px"}
-            src={URL.createObjectURL(selectedImage)}
-          />
-          <br />
-          <button onClick={handleRemoveClick}>Remove</button>
-        </div>
-      )}
-
-      <br />
-      <br />
-      
-      <input
-        type="file"
-        name="myImage"
-        onChange={handleImageChange}
-      />
+      <div className='upload--area'>
+      <label for="image_uploads">Choose a logo image to upload (PNG, JPG)</label>
+    <input
+      type="file"
+      id="image_uploads"
+      name="image_uploads"
+      onChange={handleImageChange}
+      accept=".jpg, .jpeg, .png"/>
+      { selectedImage && <img className='uploaded--img' src={URL.createObjectURL(selectedImage)} /> }
+    </div>
     </div>
   );
 };
 
 export default Logo;
+

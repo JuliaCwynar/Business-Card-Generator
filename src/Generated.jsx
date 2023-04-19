@@ -7,7 +7,7 @@ function Generated(props) {
     <div className='generated--space'>
       <div className='card--front' style={{ backgroundImage: `url(${background})`, fontFamily: font ? font.family : 'sans-serif' }}>
         <h2>{companyName}</h2>
-        <img src={logo} alt="logo" />
+        <div className='generated--logo'><img  src={URL.createObjectURL(logo)} alt="logo" /></div>
       </div>
 
       <div className='card--back' style={{ backgroundImage: `url(${background})`, fontFamily: font ? font.family : 'sans-serif' }}>

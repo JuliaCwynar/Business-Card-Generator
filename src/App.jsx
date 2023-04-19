@@ -15,7 +15,7 @@ function GenerateButton(props) {
   const { onClick} = props;
   return (
     <div>
-    <button className='form--button' onClick={(e) => {
+    <button type="button" className='form--button' onClick={(e) => {
       e.preventDefault();
       onClick();
     }}>Generate business card</button>
@@ -33,7 +33,7 @@ function App() {
   const [logo, setLogoImage] = useState('');
   const [background, setBackground] = useState('');
   const [font, setFont] = useState('');
-  const [isGenerated, setIsGenerated] = useState(false); // new state variable
+  const [isGenerated, setIsGenerated] = useState(false); 
   
   const handleGenerateClick = () => {
     setIsGenerated(true);
@@ -56,7 +56,7 @@ function App() {
         <Style onFontChange={setFont}/>
         <GenerateButton onClick={handleGenerateClick} />
       </form>
-      {isGenerated && ( // only show the generated card when the button is clicked
+      {isGenerated && ( 
         <Generated 
           companyName={companyName}
           companyField={companyField}
