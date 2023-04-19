@@ -13,6 +13,8 @@ function Background(props) {
     onBackgroundChange(selectedBackgroundUrl);
   };
 
+
+
   const backgrounds = data.data.backgrounds.map((background) => (
     <div className="background--choice" key={background.id}>
       <img
@@ -28,7 +30,7 @@ function Background(props) {
         checked={selectedBackground === background.id}
         onChange={handleChange}
       />
-      <label htmlFor={`background-${background.id}`}>Tło nr {background.id}</label>
+      <label htmlFor={`background-${background.id}`}>Background no. {background.id}</label>
     </div>
   ));
 
@@ -37,7 +39,17 @@ function Background(props) {
       <h1>
         <span className="number">2</span>Choose background
       </h1>
-      <section className="background-list">{backgrounds}</section>
+      <section 
+      className="background-list">{backgrounds}
+      <div className='background--choice'>
+        <p>Or choose the certain color: </p>
+        <input 
+          type="color" 
+          id="colorpicker" 
+          onChnage={handleChange}
+         />
+      </div>
+      </section>
     </div>
   );
 }

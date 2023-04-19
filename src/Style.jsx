@@ -12,7 +12,7 @@ function Style(props) {
   };
 
   const FontStyles = Fonts.Fonts.map((font) => (
-    <div className={font.id} key={font.id}>
+    <div className='font' key={font.id}>
       <input
         type="radio"
         id={font.family}
@@ -32,7 +32,7 @@ function Style(props) {
       <h1>
         <span className="number">3</span>Choose font
       </h1>
-      <form className="form">{FontStyles}</form>
+      <form className="font--style">{FontStyles}</form>
     </div>
   );
 }
