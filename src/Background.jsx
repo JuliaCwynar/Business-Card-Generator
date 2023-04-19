@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import data from './Backgrounds';
 
+
+
+
 function Background(props) {
   const { onBackgroundChange } = props;
   const [selectedBackground, setSelectedBackground] = useState('');
@@ -11,7 +14,14 @@ function Background(props) {
       (background) => background.id === event.target.value
     ).url;
     onBackgroundChange(selectedBackgroundUrl);
+    console.log(selectedBackground);
   };
+
+  const pickColor = (event) => {
+    setSelectedBackground(event.target.value);
+    onBackgroundChange(selectedBackground);
+    console.log(selectedBackground);
+  }
 
 
 
@@ -34,21 +44,22 @@ function Background(props) {
     </div>
   ));
 
+  
   return (
     <div className="generator">
       <h1>
-        <span className="number">2</span>Choose background
+        <span className="number">3</span>Choose background
       </h1>
       <section 
-      className="background-list">{backgrounds}
-      <div className='background--choice'>
-        <p>Or choose the certain color: </p>
-        <input 
+      className="background-list">
+        {backgrounds}
+        <div className="background--choice">
+          <p>Or choose the certain color: </p>
+          <input 
           type="color" 
-          id="colorpicker" 
-          onChnage={handleChange}
-         />
-      </div>
+          id="colorpicker"
+          onChange={pickColor}/>
+        </div>
       </section>
     </div>
   );

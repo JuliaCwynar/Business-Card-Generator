@@ -23,7 +23,7 @@ export default {
 
             {
                 "id":"5",
-                "url":"https://wallpaper-house.com/data/out/7/wallpaper2you_161516.jpg"
+                "url":"https://img.freepik.com/free-vector/white-abstract-background_23-2148817571.jpg"
             },
             {
                 "id":"6",
