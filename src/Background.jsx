@@ -27,21 +27,22 @@ function Background(props) {
 
   const backgrounds = data.data.backgrounds.map((background) => (
     <div className="background--choice" key={background.id}>
-      <img
-        className="backgrounds"
-        src={background.url}
-        alt={`Background ${background.id}`}
-      />
-      <input
-        type="radio"
-        className="background--button"
-        name="background"
-        value={background.id}
-        checked={selectedBackground === background.id}
-        onChange={handleChange}
-      />
-      <label htmlFor={`background-${background.id}`}>Background no. {background.id}</label>
-    </div>
+    <img
+      className="backgrounds"
+      src={background.url}
+      alt={`Background ${background.id}`}
+    />
+    <input
+      type="radio"
+      id={`background-${background.id}`}
+      className="background--button"
+      name="background"
+      value={background.id}
+      checked={selectedBackground === background.id}
+      onChange={handleChange}
+    />
+    <label htmlFor={`background-${background.id}`}>Background no. {background.id}</label>
+  </div>
   ));
 
   
@@ -54,11 +55,12 @@ function Background(props) {
       className="background-list">
         {backgrounds}
         <div className="background--choice">
-          <p>Or choose the certain color: </p>
+          
           <input 
           type="color" 
-          id="colorpicker"
+   
           onChange={pickColor}/>
+          <p>Or choose color </p>
         </div>
       </section>
     </div>

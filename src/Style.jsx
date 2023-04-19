@@ -30,7 +30,7 @@ function Style(props) {
   return (
     <div className="generator">
       <h1>
-        <span className="number">4</span>Choose font
+        <span className="number">4</span>Choose styling
       </h1>
       <form className="font--style">{FontStyles}</form>
     </div>

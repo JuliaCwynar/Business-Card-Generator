@@ -7,7 +7,7 @@ export default function Navbar() {
         <div className='header'>
             <img src={logo} />
             <h1>Business Card Generator</h1>
-            <h2>Julia Cwynar</h2>
+            <h2>BCG</h2>
         </div>
     )
 }

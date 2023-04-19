@@ -29,6 +29,14 @@ export default {
                 "id":"6",
                 "url":"https://wallpapercave.com/wp/wp3186008.jpg"
             },
+            {
+                "id":"7",
+                "url":"https://img.freepik.com/free-vector/white-abstract-background_23-2148817571.jpg"
+            },
+            {
+                "id":"8",
+                "url":"https://wallpapercave.com/wp/wp3186008.jpg"
+            },
         ]
     }
 }
