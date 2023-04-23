@@ -42,7 +42,6 @@ function Style(props) {
       </h1>
       <form className="font--style">{FontStyles}</form>
       <div className="font--color">
-          
           <input 
           type="color" 
           checked={selectedColor}
