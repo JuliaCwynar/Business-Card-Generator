@@ -34,6 +34,7 @@ function App() {
   const [background, setBackground] = useState('');
   const [font, setFont] = useState('');
   const [isGenerated, setIsGenerated] = useState(false); 
+  const [fontColor, setFontColor] = useState('');
   
   const handleGenerateClick = () => {
     setIsGenerated(true);
@@ -42,21 +43,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <form>
-        <Data 
-          setCompanyName={setCompanyName}
-          setCompanyField={setCompanyField}
-          setCompanyAddress={setCompanyAddress}
-          setNameSurname={setNameSurname}
-          setPhoneNumber={setPhoneNumber}
-          setEmail={setEmail}
-        />
-        <Logo setLogoImage={setLogoImage} />
-        <Background onBackgroundChange={setBackground} />
-        <Style onFontChange={setFont}/>
-        <GenerateButton onClick={handleGenerateClick} />
-      </form>
-      {isGenerated && ( 
+      {isGenerated ? (
         <Generated 
           companyName={companyName}
           companyField={companyField}
@@ -67,10 +54,30 @@ function App() {
           logo={logo}
           background={background}
           font={font}
+          fontColor={fontColor}
         />
+      ) : (
+        <>
+          <form>
+            <Data 
+              setCompanyName={setCompanyName}
+              setCompanyField={setCompanyField}
+              setCompanyAddress={setCompanyAddress}
+              setNameSurname={setNameSurname}
+              setPhoneNumber={setPhoneNumber}
+              setEmail={setEmail}
+            />
+            <Logo setLogoImage={setLogoImage} />
+            <Background onBackgroundChange={setBackground} />
+            <Style 
+            onFontChange={setFont}
+            onColorChange={setFontColor}/>
+            <GenerateButton onClick={handleGenerateClick} />
+          </form>
+        </>
       )}
-    </div>
+      </div>
   );
-}
+      }
 
 export default App;

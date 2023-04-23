@@ -3,7 +3,7 @@ import React, { useState } from "react";
 function Logo(props) {
 
   const { setLogoImage } = props;
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState();
 
   const handleImageChange = (event) => {
     setSelectedImage(event.target.files[0]);

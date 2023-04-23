@@ -55,7 +55,7 @@ function Background(props) {
           
           <input 
           type="color" 
-   
+          checked={selectedBackground}
           onChange={pickColor}/>
           <p>Or choose color </p>
         </div>
